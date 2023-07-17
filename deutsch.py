@@ -6,8 +6,8 @@ from pydub import AudioSegment
 from pydub.playback import play
 
 # Setting the API keys
-openai.api_key = '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'
-elevenLabsAPIKey = '00f0c42b5a788b2c432412bc6fc96f02'
+openai.api_key = ''
+elevenLabsAPIKey = ''
 
 # Setting the recognizer and microphone
 r = sr.Recognizer()
