@@ -4,9 +4,9 @@ import speech_recognition as sr
 import openai
 from elevenlabslib import *
 
-openai.api_key = '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'
+openai.api_key = ''
 
-elevenLabsAPIKey = '00f0c42b5a788b2c432412bc6fc96f02'
+elevenLabsAPIKey = ''
 
 
 r = sr.Recognizer()
