@@ -1,11 +1,13 @@
+
+
 import speech_recognition as sr
 import openai
-
 from elevenlabslib import *
 
-openai.api_key = 'YOUR KEY HERE'
+openai.api_key = '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'
 
-elevenLabsAPIKey = 'YOUR KEY HERE'
+elevenLabsAPIKey = '00f0c42b5a788b2c432412bc6fc96f02'
+
 
 r = sr.Recognizer()
 mic = sr.Microphone()
@@ -14,13 +16,14 @@ user = ElevenLabsUser(elevenLabsAPIKey)
 voice = user.get_voices_by_name("Jarvis")[0]
 
 conversation = [
-        {"role": "system", "content": "Your name is Jarvis and your purpose is to be Adam's AI assistant"},
+        {"role": "system", "content": "Dein Name ist Javris. Du bist Falcos persönlicher Assistent."},
+        
     ]
 
 
 while True:
     with mic as source:
-        r.adjust_for_ambient_noise(source) #Can set the duration with duration keyword
+        r.adjust_for_ambient_noise(source) 
         print("talk")
         audio = r.listen(source)
 
@@ -48,5 +51,4 @@ while True:
 
         message = response["choices"][0]["message"]["content"]
         conversation.append({"role": "assistant", "content": message})
-        # print(message)
         voice.generate_and_play_audio(message, playInBackground=False)
