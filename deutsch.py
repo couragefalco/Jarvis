@@ -4,10 +4,17 @@ import requests
 import io
 from pydub import AudioSegment
 from pydub.playback import play
+import dotenv
+import os
 
-# Setting the API keys
-openai.api_key = ''
-elevenLabsAPIKey = ''
+# Loading the environment variables
+dotenv.load_dotenv()
+
+
+openai.api_key = os.getenv('OPENAI_API_KEY')
+elevenLabsAPIKey = os.getenv('ELEVENLABS_VARIABLE')
+
+
 
 # Setting the recognizer and microphone
 r = sr.Recognizer()
@@ -27,7 +34,7 @@ conversation = [{"role": "system", "content": "You are Jarvis, Falco's personal 
 
 while True:
     # Listening to the user's voice
-    with mic as source:
+    with mic as source: 
         r.adjust_for_ambient_noise(source)
         print("Listening...")
         audio = r.listen(source)
