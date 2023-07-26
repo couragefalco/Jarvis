@@ -1,12 +1,13 @@
-
-
 import speech_recognition as sr
 import openai
 from elevenlabslib import *
+from dotenv import load_dotenv
+import os
 
-openai.api_key = ''
+load_dotenv()
 
-elevenLabsAPIKey = ''
+openai.api_key = os.getenv('OPENAI_API_KEY')
+elevenLabsAPIKey = os.getenv('ELEVENLABS_VARIABLE')
 
 
 r = sr.Recognizer()
