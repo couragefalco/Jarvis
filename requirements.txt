@@ -5,3 +5,7 @@ pyaudio==0.2.13
 gtts
 pydub
 python-dotenv
+FastAPI
+Twilio
+uvicorn
+python-multipart

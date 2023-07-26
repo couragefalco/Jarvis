@@ -27,10 +27,10 @@ response = requests.get('https://api.elevenlabs.io/v1/voices', headers={'xi-api-
 voice_id = response.json()["voices"][0]["voice_id"]  # Assuming the first voice is Jarvis
 
 voices = response.json()["voices"]
-voice_id = next((voice["voice_id"] for voice in voices if voice["name"] == "Jarvis"), None)
+voice_id = next((voice["voice_id"] for voice in voices if voice["name"] == "Samual"), None)
 
 # Starting the conversation with the AI
-conversation = [{"role": "system", "content": "You are Jarvis, Falco's personal assistant."}]
+conversation = [{"role": "system", "content": "Du bist Jarvis, Falcos persönlicher Assistent."}]
 
 while True:
     # Listening to the user's voice
